@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Alert } from "./components/Alert";
 import { CreateAlertForm } from "./components/forms/CreateAlert";
 
@@ -20,7 +20,7 @@ export default function PrimeRevenue() {
 
   const handleClose = useCallback((id: number) => {
     setAlerts((prevAlerts) => {
-      return prevAlerts.filter((value, index) => index !== id);
+      return prevAlerts.filter((_, index) => index !== id);
     });
   }, []);
 
