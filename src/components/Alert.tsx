@@ -1,18 +1,24 @@
-import React from 'react'
-import CloseIcon from '../icons/Close.svg?react' 
-import ExclamationIcon from '../icons/Exclamation.svg?react' 
-import EyeIcon from '../icons/Eye.svg?react' 
+import React from "react";
+import CloseIcon from "../icons/Close.svg?react";
+import ExclamationIcon from "../icons/Exclamation.svg?react";
+import EyeIcon from "../icons/Eye.svg?react";
 
-interface Props extends React.ComponentPropsWithoutRef<'div'> {
-  title: string
-  description: string
-  onViewDetails?: () => void
-  onClose?: () => void
+interface Props extends React.ComponentPropsWithoutRef<"div"> {
+  title: string;
+  description: string;
+  onViewDetails?: () => void;
+  onClose?: () => void;
 }
 
-export function Alert ({title, description, onClose = () => {}, onViewDetails}: Props) {
+export function Alert({
+  title,
+  description,
+  onClose = () => {},
+  onViewDetails,
+}: Props) {
   return (
-    <div className='
+    <div
+      className="
       flex
       flex-col
       m-2
@@ -24,33 +30,37 @@ export function Alert ({title, description, onClose = () => {}, onViewDetails}: 
       gap-3
       bg-[#FDF2F2]
       text-[#9E1C15]
-    '>
-      <header className='
+    "
+    >
+      <header
+        className="
         relative
         flex
         flex-row
         justify-items-start
         items-center
-      '>
-        <ExclamationIcon width={'1rem'} height={'1rem'}/>
-        <h3 className='font-semibold ml-1.5 pr-5 pb-0.25'>{title}</h3>
-        <button className='
+      "
+      >
+        <ExclamationIcon width={"1rem"} height={"1rem"} />
+        <h3 className="font-semibold ml-1.5 pr-5 pb-0.25">{title}</h3>
+        <button
+          className="
           absolute
           top-0
           right-0
           flex
           flex-col
           justify-start
-          hover:text-amber-500'
+          hover:text-amber-500"
           onClick={onClose}
         >
-          <CloseIcon height={11} width={11}/>
+          <CloseIcon height={11} width={11} />
         </button>
       </header>
-      <p>
-        {description}
-      </p>
-      {onViewDetails && <button className='
+      <p>{description}</p>
+      {onViewDetails && (
+        <button
+          className="
         w-fit
         rounded-lg
         px-3
@@ -62,12 +72,13 @@ export function Alert ({title, description, onClose = () => {}, onViewDetails}: 
         text-xs
         text-white
         bg-[#DE2C18]
-        hover:bg-amber-500'
-        onClick={onViewDetails}
-      >
-        <EyeIcon width={12} height={9}/>
-        <span>View more</span>
-      </button>}
+        hover:bg-amber-500"
+          onClick={onViewDetails}
+        >
+          <EyeIcon width={12} height={9} />
+          <span>View more</span>
+        </button>
+      )}
     </div>
-  )
+  );
 }
