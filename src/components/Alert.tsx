@@ -1,4 +1,7 @@
 import React from 'react'
+import CloseIcon from '../icons/Close.svg?react' 
+import ExclamationIcon from '../icons/Exclamation.svg?react' 
+import EyeIcon from '../icons/Eye.svg?react' 
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string
@@ -29,8 +32,8 @@ export function Alert ({title, description, onClose = () => {}, onViewDetails}: 
         justify-items-start
         items-center
       '>
-        CheckCircle icon
-        <h3 className='font-semibold ml-1.5 pr-5'>{title}</h3>
+        <ExclamationIcon width={'1rem'} height={'1rem'}/>
+        <h3 className='font-semibold ml-1.5 pr-5 pb-0.25'>{title}</h3>
         <button className='
           absolute
           top-0
@@ -41,7 +44,7 @@ export function Alert ({title, description, onClose = () => {}, onViewDetails}: 
           hover:text-amber-500'
           onClick={onClose}
         >
-          Close Icon
+          <CloseIcon height={11} width={11}/>
         </button>
       </header>
       <p>
@@ -62,7 +65,7 @@ export function Alert ({title, description, onClose = () => {}, onViewDetails}: 
         hover:bg-amber-500'
         onClick={onViewDetails}
       >
-        Eye icon
+        <EyeIcon width={12} height={9}/>
         <span>View more</span>
       </button>}
     </div>
