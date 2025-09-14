@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/inter-normal.woff2') format('woff2'),
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+
+body {
+  font-family: 'Inter';
+  /* var(--default-font-family,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji") */
+}

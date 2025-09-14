@@ -38,11 +38,11 @@ export function Alert({
         flex
         flex-row
         justify-items-start
-        items-center
+        items-start
       "
       >
-        <ExclamationIcon width={"1rem"} height={"1rem"} />
-        <h3 className="font-semibold ml-1.5 pr-5 pb-0.25">{title}</h3>
+        <ExclamationIcon className="shrink-0 mt-1" width={"1rem"} height={"1rem"} />
+        <h3 className="font-semibold ml-1.5 pr-5 pb-0.25 leading-6">{title}</h3>
         <button
           className="
           absolute
@@ -57,7 +57,13 @@ export function Alert({
           <CloseIcon height={11} width={11} />
         </button>
       </header>
-      <p>{description}</p>
+      <p 
+      className="font-normal text-sm leading-5"
+      style={{
+        // @ts-ignore
+        textBoxTrim: 'trim-both',
+      }}
+      >{description}</p>
       {onViewDetails && (
         <button
           className="
